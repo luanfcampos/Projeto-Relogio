@@ -4,6 +4,7 @@ let digitalElement = document.querySelector('.digital')
 let sElement = document.querySelector('.p_s')
 let mElement = document.querySelector('.p_m')
 let hElement = document.querySelector('.p_h')
+let bgElement = document.getElementById('bg')
 
 // Processo de atualização do relogio
 
@@ -26,13 +27,13 @@ function updateClock() {
     hElement.style.transform = `rotate(${hDeg}deg)`
 
     if (hour < 4) {
-        document.getElementsByTagName('body').style.backgoundImage = url('noite.jpg')
+        bgElement.style.backgroundImage = "url('noite.jpg')"
     }else if (hour < 12){
-        document.getElementsByTagName('body').style.backgoundImage = url('manha.jpg')
+        bgElement.style.backgroundImage = "url('manha.jpg')"
     }else if (hour < 18){
-        document.getElementsByTagName('body').style.backgoundImage = url('tarde.jpg')
+        bgElement.style.backgroundImage = "url('tarde.jpg')"
     }else {
-        document.getElementsByTagName('body').style.backgoundImage = url('noite.jpg')
+        bgElement.style.backgroundImage = "url('noite.jpg')"
     }
 }
 
