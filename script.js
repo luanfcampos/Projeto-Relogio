@@ -14,7 +14,15 @@ function updateClock() {
     let minute = now.getMinutes()
     let second = now.getSeconds()
 
-
+    if (hour < 4) {
+        bgElement.style.backgroundImage = "url('noite.jpg')"
+    }else if (hour < 12){
+        bgElement.style.backgroundImage = "url('manha.jpg')"
+    }else if (hour < 18){
+        bgElement.style.backgroundImage = "url('tarde.jpg')"
+    }else {
+        bgElement.style.backgroundImage = "url('noite.jpg')"
+    }
 
     digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}` //atualiza o relogio digital
 
@@ -25,16 +33,6 @@ function updateClock() {
     sElement.style.transform = `rotate(${sDeg}deg)` //atualiza a posição dos ponteiros
     mElement.style.transform = `rotate(${mDeg}deg)`
     hElement.style.transform = `rotate(${hDeg}deg)`
-
-    if (hour < 4) {
-        bgElement.style.backgroundImage = "url('noite.jpg')"
-    }else if (hour < 12){
-        bgElement.style.backgroundImage = "url('manha.jpg')"
-    }else if (hour < 18){
-        bgElement.style.backgroundImage = "url('tarde.jpg')"
-    }else {
-        bgElement.style.backgroundImage = "url('noite.jpg')"
-    }
 }
 
 //essa função adiciona 0 a esquerda de valores < 10 para melhor formatação
